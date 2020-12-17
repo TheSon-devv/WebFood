@@ -55,7 +55,7 @@ export default function Components(props) {
 
 
             <SectionLogin />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }
