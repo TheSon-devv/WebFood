@@ -65,6 +65,7 @@ const SignIn = () => {
     const classes = useStyles();
     const [email, setEmail] = useState('');
     const [password,setPassword] = useState('');
+    const [login,setLogin] = useState(false);
 
     const handleChangeEmail = e => {
         setEmail(e.target.value);
@@ -75,7 +76,31 @@ const SignIn = () => {
     }
 
     const handleSubmit = e => {
-       e.preventDefault();
+        e.preventDefault();
+    //    fetch('http://localhost:52419/api/DCandidates', {
+    //     method: 'POST',
+    //     cache: 'no-cache',
+    //     headers: {
+    //         Accept: 'application/json',
+    //         'Content-Type': 'application/json; charset = utf-8'
+    //     },
+    //     body: JSON.stringify({
+    //         email : email,
+    //         password : password,
+    //         login : login
+    //     })
+    // })
+    //     .then((response) => response.json())
+    //     .then((json) => {
+    //         console.log(json);
+    //         localStorage.setItem('login',JSON.stringify({
+    //             login : true,
+    //             token : json.token
+    //         }))
+    //     })
+    //     .catch((error) => {
+    //         console.error(error);
+    //     })
     }
 
     return (
@@ -149,8 +174,6 @@ const SignIn = () => {
         </Grid>
     );
 }
-const mapDispatchToProps = dispatch => ({
-    userLoginFetch: userInfo => dispatch(userLoginFetch(userInfo))
-})
 
-export default connect(null,mapDispatchToProps)(SignIn);
+
+export default SignIn;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,13 +13,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link } from "react-router-dom";
 
+import { connect } from "react-redux";
+import { userPostFetch } from "../actions/api";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
+      
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -46,9 +47,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+const SignUp = ({...props}) =>  {
   const classes = useStyles();
 
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [firstName,setFirstName] = useState('');
+    const [lastName,setLastName] = useState('');
+
+    const handleChangeEmail = e => {
+        setEmail(e.target.value);
+    }
+    const handleChangePassword = e => {
+        setPassword(e.target.value);
+    }
+    const handleChangeFirstName = e => {
+        setFirstName(e.target.value);
+    }
+    const handleChangeLastName = e => {
+        setLastName(e.target.value);
+    }
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.userPostFetch()
+    }
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -59,7 +81,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form}>
+        <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -71,6 +93,8 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                value={firstName}
+                onChange={handleChangeFirstName}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -82,6 +106,8 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                value={lastName}
+                onChange={handleChangeLastName}
               />
             </Grid>
             <Grid item xs={12}>
@@ -93,6 +119,8 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                value={email}
+                onChange={handleChangeEmail}
               />
             </Grid>
             <Grid item xs={12}>
@@ -105,6 +133,8 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+                onChange={handleChangePassword}
               />
             </Grid>
             <Grid item xs={12}>
@@ -138,3 +168,9 @@ export default function SignUp() {
     </Container>
   );
 }
+
+const mapDispatchToProps = dispatch => ({
+    userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
+})
+
+export default connect(null,mapDispatchToProps)(SignUp);
