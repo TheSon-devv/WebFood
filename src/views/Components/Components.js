@@ -43,7 +43,7 @@ export default function Components(props) {
                     <GridContainer>
                         <GridItem>
                             <div className={classes.brand}>
-                                <h1 className={classes.title}>Food</h1>
+                                <h1 className={classes.title}>Menu</h1>
                                 <h3 className={classes.subtitle}>
                                     Table 
                                 </h3>
