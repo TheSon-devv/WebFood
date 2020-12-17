@@ -45,7 +45,7 @@ export default function Components(props) {
                             <div className={classes.brand}>
                                 <h1 className={classes.title}>Food</h1>
                                 <h3 className={classes.subtitle}>
-                                    Amazing Good Job
+                                    Table menu
                                 </h3>
                             </div>
                         </GridItem>
