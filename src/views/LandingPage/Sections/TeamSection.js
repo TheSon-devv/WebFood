@@ -37,7 +37,7 @@ export default function TeamSection() {
   return (
     <div className={classes.section}>
         <Card>
-          <img className={classess.imgCard1} src={image1} alt="Card-img" />
+          <img className={classess.imgCard} src={image1} alt="Card-img" />
           <div className={classess.imgCardOverlay}>
             <h4 className={classes.cardTitle}>Thông Tin Đặt Bàn</h4>
             <p className={classes.smallTitle}>Khám phá những sự kiện đặc sắc tại Nhà hàng.</p>

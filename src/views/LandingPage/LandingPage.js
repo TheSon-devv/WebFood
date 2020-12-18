@@ -60,10 +60,17 @@ export default function LandingPage(props) {
         </div>
       </Parallax>
       <div >
-        <div className={classes.container}>
-          <ProductSection />
+        <div >
+          <div className={classes.container}>
+            <ProductSection  />
+          </div>
+          
           <TeamSection />
-          <WorkSection />
+
+          <div className={classes.container}>
+            <WorkSection />
+          </div>
+         
         </div>
       </div>
       <Footer />

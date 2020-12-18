@@ -41,52 +41,7 @@ export default function ProductSection() {
   const classes = useStyles();
   const classess = usecardTitle();
   return (
-    <div className={classes.section}>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={12}>
-          <Card>
-            <Carousel {...settings}>
-              <div>
-                <img src={image1} alt="First slide" className="slick-image" />
-                <div className="slick-caption">
-                  <h2>
-                    Yellowstone National Park, United States
-                  </h2>
-                </div>
-              </div>
-              
-              <div>
-                <img src={image4} alt="First slide" className="slick-image" />
-                <div className="slick-caption">
-                  <h2>
-                    
-                    Yellowstone National Park, United States
-                  </h2>
-                </div>
-              </div>
-              <div>
-                <img src={image5} alt="Second slide" className="slick-image" />
-                <div className="slick-caption">
-                  <h2>
-                    
-                    Somewhere Beyond, United States
-                  </h2>
-                </div>
-              </div>
-              <div>
-                <img src={image3} alt="Third slide" className="slick-image" />
-                <div className="slick-caption">
-                  <h2>
-                    Yellowstone National Park, United States
-                  </h2>
-                </div>
-              </div>
-            </Carousel>
-          </Card>
-        </GridItem>
-      </GridContainer>
-      <div>
-
+    <div  className={classes.section}>
         <GridContainer>
           <GridItem xs={12} sm={12} md={3}>
             <Card>
@@ -141,6 +96,5 @@ export default function ProductSection() {
           </GridItem>
         </GridContainer>
       </div>
-    </div>
   );
 }
