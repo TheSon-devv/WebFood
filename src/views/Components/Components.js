@@ -31,14 +31,14 @@ export default function Components(props) {
                 brand="Restaurant"
                 rightLinks={<HeaderLinks />}
                 fixed
-                color="transparent"
+                color="#fff"
                 changeColorOnScroll={{
                     height: 500,
-                    color: "white"
+                    color: "#eee"
                 }}
                 {...rest}
             />
-            <Parallax image={require("assets/img/nhahang1.jpg")}>
+            <Parallax image={require("assets/img/nhahang4.jpg")}>
                 <div className={classes.container}>
                     <GridContainer>
                         <GridItem>

@@ -9,63 +9,82 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
+import Carousel from "react-slick";
+import Slider from "react-slick";
+
+import image1 from "assets/img/menu/menu3.jpg";
+import image2 from "assets/img/menu/menu1.jpg";
+import image3 from "assets/img/menu/menu2.jpg";
+import image4 from "assets/img/menu/menu4.jpg";
+import image5 from "assets/img/menu/menu5.jpg";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
+import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
+
+
 
 const useStyles = makeStyles(styles);
+const useImageStyles=makeStyles(imagesStyles);
 
 export default function WorkSection() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+  };
   const classes = useStyles();
+  const classess= useImageStyles();
   return (
     <div className={classes.section}>
-      <GridContainer justify="center">
-        <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
-          <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
-          </h4>
-          <form>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Name"
-                  id="name"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Your Email"
-                  id="email"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                />
-              </GridItem>
-              <CustomInput
-                labelText="Your Message"
-                id="message"
-                formControlProps={{
-                  fullWidth: true,
-                  className: classes.textArea
-                }}
-                inputProps={{
-                  multiline: true,
-                  rows: 5
-                }}
-              />
-              <GridItem xs={12} sm={12} md={4}>
-                <Button color="primary">Send Message</Button>
-              </GridItem>
-            </GridContainer>
-          </form>
-        </GridItem>
+      <GridContainer>
+        <GridItem >
+          <Card>
+            <Slider {...settings}>
+              <div>
+                <img src={image1} alt="First slide" className="slick-image" />
+                <div className="slick-caption">
+                  <h2>
+                    Yellowstone National Park, United States
+                  </h2>
+                </div>
+              </div>
+              
+              <div>
+                <img src={image4} alt="First slide" className="slick-image" />
+                <div className="slick-caption">
+                  <h2>
+                    
+                    Yellowstone National Park, United States
+                  </h2>
+                </div>
+              </div>
+              <div>
+                <img src={image5} alt="Second slide" className="slick-image" />
+                <div className="slick-caption">
+                  <h2>
+                    
+                    Somewhere Beyond, United States
+                  </h2>
+                </div>
+              </div>
+              <div>
+                <img src={image3} alt="Third slide" className="slick-image" />
+                <div className="slick-caption">
+                  <h2>
+                    Yellowstone National Park, United States
+                  </h2>
+                </div>
+              </div>
+            </Slider>
+          </Card>
+          </GridItem>
       </GridContainer>
+      
     </div>
   );
 }
