@@ -22,6 +22,10 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/head
 import { cardTitle } from "assets/jss/material-kit-react.js";
 
 import image1 from "assets/img/home/home1.jpg";
+import icon1 from "assets/img/icons/meat1.png";
+import icon2 from "assets/img/icons/fish1.png";
+import icon3 from "assets/img/icons/menu1.png";
+
 
 const useStyles = makeStyles(styles);
 const usecardTitle = makeStyles(cardTitle);
@@ -39,7 +43,7 @@ export default function ProductSection() {
   const classess = usecardTitle();
   return (
     <div  className={classes.section} >
-        <GridContainer style={{marginTop:"30px",marginBottom:"50px"}}>
+        <GridContainer style={{marginTop:"50px",marginBottom:"50px"}}>
           <GridItem xs={12} sm={12} md={6}>
                 <div style={{textAlign:"center"}}>
                         <span style={{ fontSize:"18px",fontFamily:"Roboto", fontWeight:"700",color:"#1c1c1c"}}>RESTAURANT</span>
@@ -68,18 +72,21 @@ export default function ProductSection() {
         <GridContainer spacing="3">
             <GridItem xs="4">
                 <div>
+                    <img src={icon1}></img>
                     <h4 className={classess.cardTitle}>Vietnamese Culinary Artisanship</h4>
                     <p>We create menu that highlights traditional Vietnamese cuisine and showcases national heritage, enticing the senses of fine dining enthusiasts.</p>
                 </div>
             </GridItem>
             <GridItem xs="4">
                 <div>
+                    <img src={icon2}></img>
                     <h4 className={classess.cardTitle}>Premium Ingredients</h4>
                     <p>We are proud to offer fresh food from daily deliveries to ensure that only the finest ingredients are used to create our premium dishes.</p>
                 </div>
             </GridItem>
             <GridItem xs="4">
                 <div>
+                    <img src={icon3}></img>
                     <h4 className={classess.cardTitle}>Classy Design</h4>
                     <p>Luxurious and timeless, our design is greatly inspired by neoclassicism that manifests utmost elegance and sophistication from the mid-18th century.</p>
                 </div>

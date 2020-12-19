@@ -31,46 +31,51 @@ export default function Components(props) {
     const classes = useStyles();
     const { ...rest } = props;
     return (
-        <div style={{backgroundColor:"#fff"}}>
-            <Header
-                color="transparent"
-                brand="Restaurant"
-                rightLinks={<HeaderLinks />}
-                fixed
-                changeColorOnScroll={{
-                    height: 500,
-                    color: "white"
-                }}
-                {...rest}
-            />
-            <Parallax image={require("assets/img/home/home.jpg")}>
-                <div className={classes.container}>
-                    <GridContainer>
-                        <GridItem>
-                            <div className={classes.brand}>
-                                <h1 className={classes.title}>Menu</h1>
-                                <h3 className={classes.subtitle}>
-                                    Table Menu
-                                </h3>
-                            </div>
-                        </GridItem>
-                    </GridContainer>
+      <div style={{ backgroundColor: "#fff" }}>
+        <Header
+          color="transparent"
+          brand="Restaurant"
+          rightLinks={<HeaderLinks />}
+          fixed
+          changeColorOnScroll={{
+            height: 500,
+            color: "white",
+          }}
+          {...rest}
+        />
+        <Parallax image={require("assets/img/home/home2.jpg")}>
+          <div className={classes.container}>
+            <GridContainer>
+              <GridItem>
+                <div className={classes.brand}>
+                    <div>
+                        <span style={{ fontSize:"18px",fontFamily:"Roboto", fontWeight:"700",color:"#fff"}}>- Spcecial Offer -</span>
+                        <h2 style={{textAlign:"center", fontSize:"45px",fontFamily:"Playfair Display", fontWeight:"400",color:"#fff"}}>Winter Special Offers At The Rhythms</h2>
+                    </div>
+                  <Button className={classes.button}>
+                    <Link to="/reservation-page" className={classes.link}>
+                      ĐẶT BÀN NGAY
+                    </Link>
+                  </Button>
                 </div>
-            </Parallax>
+              </GridItem>
+            </GridContainer>
+          </div>
+        </Parallax>
 
-            <div className={classes.container} >
-                <HeadSection  />
-            </div>
-            <div className={classes.container} >
-                <ProductSection  />
-            </div>
-            
-            <TeamSection />
-
-            <div className={classes.container}>
-                <WorkSection />
-            </div>
-            <Footer /> 
+        <div className={classes.container}>
+          <HeadSection />
         </div>
+        <div className={classes.container}>
+          <ProductSection />
+        </div>
+
+        <TeamSection />
+
+        <div className={classes.container}>
+          <WorkSection />
+        </div>
+        <Footer />
+      </div>
     );
 }

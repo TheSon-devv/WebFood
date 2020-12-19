@@ -29,8 +29,15 @@ const componentsStyle = {
   //   boxShadow:
   //     "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
   // },
-  link: {
-    textDecoration: "none"
+  button:{
+    backgroundColor:"#b96",
+    minWidth:"200px",
+    height:"50px"
+  },
+  link:{
+    color:"#fff", 
+    fontSize:"14px",
+    fontFamily:"Roboto"
   },
   textCenter: {
     textAlign: "center"

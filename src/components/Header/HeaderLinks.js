@@ -76,7 +76,7 @@ export default function HeaderLinks(props) {
           target="_blank"
           className={classes.navLink}
         >
-            <Link to="/" className={classes.link}>About Us</Link>
+            <Link to="/profile-page" className={classes.link}>About Us</Link>
            
         </Button>
       </ListItem>
@@ -87,6 +87,17 @@ export default function HeaderLinks(props) {
           className={classes.navLink}
         >
             <Link to="/" className={classes.link}>Contact</Link>
+           
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <img></img>
+        <Button
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        >
+            <Link to="/signIn" className={classes.link}>Login</Link>
            
         </Button>
       </ListItem>
