@@ -13,6 +13,7 @@ import LoginPage from "views/LoginPage/LoginPage.js";
 import SignIn from "./views/SignIn";
 import SignUp from "./views/SignUp";
 import DCandidates from "./components/DCandidates";
+import ReservationPage from "views/OderPage/ReservationPage.js";
 
 // redux
 import { store } from "./actions/store";
@@ -29,6 +30,7 @@ ReactDOM.render(
         <Route path="/landing-page" component={LandingPage} />
         <Route path="/profile-page" component={ProfilePage} />
         <Route path="/login-page" component={LoginPage} />
+        <Route path="/reservation-page" component={ReservationPage} />
         <Route path="/signIn" component={SignIn} />
         <Route path="/signUp" component={SignUp} />
       </Switch>

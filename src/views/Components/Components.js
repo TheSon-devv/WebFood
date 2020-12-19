@@ -31,7 +31,7 @@ export default function Components(props) {
     const classes = useStyles();
     const { ...rest } = props;
     return (
-        <div>
+        <div style={{backgroundColor:"#fff"}}>
             <Header
                 color="transparent"
                 brand="Restaurant"
@@ -58,10 +58,10 @@ export default function Components(props) {
                 </div>
             </Parallax>
 
-            <div className={classes.container}>
+            <div className={classes.container} >
                 <HeadSection  />
             </div>
-            <div className={classes.container}>
+            <div className={classes.container} >
                 <ProductSection  />
             </div>
             

@@ -4,6 +4,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import { cardTitle } from "assets/jss/material-kit-react.js";
+import { Link } from "react-router-dom";
 
 // @material-ui/icons
 
@@ -42,7 +43,9 @@ export default function TeamSection() {
             <h4 className={classes.cardTitle}>Thông Tin Đặt Bàn</h4>
             <p className={classes.smallTitle}>Khám phá những sự kiện đặc sắc tại Nhà hàng.</p>
             <h4 style={{color:"#fff", fontWeight:"400"}}>Lưu ý: Đặt bàn qua fanpage hoặc qua hotline của nhà hàng để được hưởng nhiều ưu đãi nhất.</h4>
-            <Button style={{backgroundColor:"#112"}} type="button">ĐẶT BÀN NGAY</Button>
+            <Button className={classes.button} >
+              <Link to="/reservation-page" className={classes.link}>ĐẶT BÀN NGAY</Link>
+            </Button>
           </div>
         </Card>
         

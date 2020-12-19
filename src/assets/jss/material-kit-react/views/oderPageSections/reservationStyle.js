@@ -50,7 +50,7 @@ const teamStyle = {
   },
   button:{
     backgroundColor:"#112",
-    minWidth:"150px"
+    minWidth:"200px"
   },
   link:{
     color:"#fff", 
@@ -59,6 +59,20 @@ const teamStyle = {
   },
   margin5: {
     margin: "5px"
+  },
+  input:{
+    backgroundColor:"#fff", 
+    fontSize:"14px",
+    height:"55px", 
+    width:"25%",
+    border:"1px solid #dce0e3", 
+    borderRadius:"5px", 
+    padding:"12.5px 20px"
+  },
+  textArea:{
+    minHeight:"200px",
+    width:"50%", 
+    fontSize:"14px"
   }
 };
 
