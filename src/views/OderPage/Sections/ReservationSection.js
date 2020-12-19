@@ -67,7 +67,7 @@ export default function TeamSection() {
           </div>
 
           <form className={classes.root} noValidate autoComplete="off">
-            <div>
+            <div style={{margin:"15px"}}>
               <TextField
                 id="outlined-textarea"
                 label="Date"
@@ -92,11 +92,12 @@ export default function TeamSection() {
                 <option>More than 7 pax</option>
               </select>
             </div>
-            <div>
+            
+            <div style={{margin:"15px"}}>
               <TextField
                 id="outlined-textarea"
                 label="Hours"
-                placeholder="Date"
+                placeholder="Hours"
                 multiline
                 variant="outlined"
               />
@@ -114,7 +115,8 @@ export default function TeamSection() {
                 <option>More than 5 tables</option>
               </select>
             </div>
-            <div>
+
+            <div >
               <TextField
                 id="outlined-textarea"
                 label="Name"
@@ -123,6 +125,7 @@ export default function TeamSection() {
                 variant="outlined"
               />
               <TextField
+                style={{marginLeft:"15px"}}
                 id="outlined-textarea"
                 label="Address"
                 placeholder="Address"
@@ -130,8 +133,10 @@ export default function TeamSection() {
                 variant="outlined"
               />
             </div>
-            <div style={{display:"block"}}>
+
+            <div style={{marginTop:"15px"}}>
               <TextField
+                
                 id="outlined-textarea"
                 label="Email"
                 placeholder="Email"
@@ -139,6 +144,7 @@ export default function TeamSection() {
                 variant="outlined"
               />
               <TextField
+                style={{marginLeft:"15px"}}
                 id="outlined-textarea"
                 label="Phone Number"
                 placeholder="Phone Number"
@@ -146,7 +152,8 @@ export default function TeamSection() {
                 variant="outlined"
               />
             </div>
-            <div style={{marginTop:"10px"}}>
+
+            <div style={{marginTop:"15px"}}>
               <TextField
                 id="outlined-multiline-static"
                 label="Message"

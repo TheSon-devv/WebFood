@@ -64,14 +64,14 @@ const teamStyle = {
     backgroundColor:"#fff", 
     fontSize:"14px",
     height:"55px", 
-    width:"25%",
+    width:"27%",
     border:"1px solid #dce0e3", 
     borderRadius:"5px", 
-    padding:"12.5px 20px"
+    marginLeft:"15px"
   },
   textArea:{
     minHeight:"200px",
-    width:"50%", 
+    width:"53%", 
     fontSize:"14px"
   }
 };
