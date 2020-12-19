@@ -43,15 +43,15 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/nhahang4.jpg")}>
+      <Parallax filter image={require("assets/img/menu/menu15.jpg")}>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={8}>
-              <h1 className={classes.title}>Our Menus</h1>
+            <GridItem xs={12} sm={12} md={12} style={{zIndex:"13"}}>
+              <h1 style={{textAlign:"center", fontSize:"45px",fontFamily:"Playfair Display", fontWeight:"400",color:"#fff"}}>Our Menus</h1>
               <h2 className={classes.text}>~</h2>
-              <h4>
+              <h4 style={{textAlign:"center", fontFamily:"Roboto",fontWeight:"400", margin:"0 0 12px", display:"block"}}>
               Our menu features the very best in authentic flavorful Vietnamese cuisine including dishes from all regions of the country
-              as well as an extensive selection of favorite international fare.
+              as well<br/> as an extensive selection of favorite international fare.
               </h4>
               <br />
               

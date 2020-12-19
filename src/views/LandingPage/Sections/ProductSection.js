@@ -49,12 +49,12 @@ export default function ProductSection() {
                       style={{height: "180px", width: "100%", display: "block"}}
                 />
               <CardBody>
-                <h4 className={classess.cardTitle}>A la Carte Menu</h4>
-                <p>Including the quintessence of Asian and Western cuisine.</p>
-                
+                <h4 className={classess.cardTitle}>Drink Menu</h4>
+                <p>Explore our drinks menu ò handpicked wines, Rose, Cocktails,soft drinks,...</p>
+                <Button style={{backgroundColor:"#112", width:"40%"}} type="button">SEE MENU</Button>
               </CardBody>
             </Card>
-            <Button type="button">SEE MENU</Button>
+            
           </GridItem>
 
           <GridItem xs={12} sm={12} md={3}>
@@ -65,9 +65,9 @@ export default function ProductSection() {
               <CardBody>
                 <h4 className={classess.cardTitle}>Western Set Menus</h4>
                 <p>Including two dinfferent det menus with a careful selection of Western delicacies.</p>
+                <Button style={{backgroundColor:"#112", width:"40%"}} type="button">SEE MENU</Button>
               </CardBody>
             </Card>
-            <Button type="button">SEE MENU</Button>
           </GridItem>
           <GridItem xs={12} sm={12} md={3}>
               <Card>
@@ -77,10 +77,9 @@ export default function ProductSection() {
                 <CardBody>
                   <h4 className={classess.cardTitle}>Asian Set Menus</h4>
                   <p>Including three set menus that represent Asian culinary experiences.</p>
+                  <Button style={{backgroundColor:"#112", width:"40%"}} type="button">SEE MENU</Button>
                 </CardBody>
               </Card>
-              
-              <Button type="button">SEE MENU</Button>
           </GridItem>
           <GridItem xs={12} sm={12} md={3}>
               <Card>
@@ -90,9 +89,11 @@ export default function ProductSection() {
                 <CardBody>
                   <h4 className={classess.cardTitle}>Love Set Menus</h4>
                   <p>These set menus are tailored specifically for couples dining at our restaurant.</p>
+                  <Button style={{backgroundColor:"#112", width:"40%"}} type="button">SEE MENU</Button>
                 </CardBody>
+                
               </Card>
-              <Button type="button">SEE MENU</Button>
+              
           </GridItem>
         </GridContainer>
       </div>

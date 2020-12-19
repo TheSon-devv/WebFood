@@ -34,7 +34,8 @@ const landingPageStyle = {
   },
   text:{
     fontSize:"2.5rem",
-    textAlign:"center"
+    textAlign:"center",
+    
   }
 };
 

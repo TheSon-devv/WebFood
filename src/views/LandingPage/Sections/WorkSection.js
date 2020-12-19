@@ -1,6 +1,6 @@
 import React from "react";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
 
 // @material-ui/icons
 
@@ -41,8 +41,26 @@ export default function WorkSection() {
   const classess= useImageStyles();
   return (
     <div className={classes.section}>
-      <GridContainer>
-        <GridItem >
+      <GridContainer spacing="3">
+        <GridItem xs="3"></GridItem>
+        <GridItem xs="6">
+          <div style={{textAlign:"center"}}>
+            <span style={{ fontSize:"18px",fontFamily:"Roboto", fontWeight:"700",color:"#1c1c1c"}}>DISCOVER OTHER SERVICES</span>
+            <h2 style={{textAlign:"center", fontSize:"45px",fontFamily:"Playfair Display", fontWeight:"400",color:"#1c1c1c"}}>Themed Events</h2>
+            <h2 style={{color:"#112", textAlign:"center"}}>~</h2>
+            <h4 style={{ fontFamily:"Roboto",fontWeight:"400", margin:"0 0 12px", color:"#666666"}}>
+            Our event planner team will help throughout the process to make your bespoke event a reality.
+            </h4>
+            <br />
+          </div>
+        </GridItem>
+
+        <GridItem xs="3"></GridItem>
+      </GridContainer>
+
+      <GridContainer spacing="3" >
+        <GridItem xs="1"></GridItem>
+        <GridItem xs="10" >
           <Card>
             <Slider {...settings}>
               <div>
@@ -83,6 +101,7 @@ export default function WorkSection() {
             </Slider>
           </Card>
           </GridItem>
+          <GridItem xs="1"></GridItem>
       </GridContainer>
       
     </div>

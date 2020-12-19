@@ -19,6 +19,11 @@ import SectionCarousel from "./Sections/SectionCarousel.js";
 
 import styles from "assets/jss/material-kit-react/views/components.js";
 import SectionLogin from "./Sections/SectionLogin.js";
+import LandingPage from "views/LandingPage/LandingPage.js";
+import ProductSection from "views/LandingPage/Sections/ProductSection.js";
+import WorkSection from "views/LandingPage/Sections/WorkSection.js";
+import TeamSection from "views/LandingPage/Sections/TeamSection.js";
+import HeadSection from "views/LandingPage/Sections/HeadSection.js";
 
 const useStyles = makeStyles(styles);
 
@@ -28,17 +33,17 @@ export default function Components(props) {
     return (
         <div>
             <Header
+                color="transparent"
                 brand="Restaurant"
                 rightLinks={<HeaderLinks />}
                 fixed
-                color="#fff"
                 changeColorOnScroll={{
                     height: 500,
-                    color: "#eee"
+                    color: "white"
                 }}
                 {...rest}
             />
-            <Parallax image={require("assets/img/nhahang4.jpg")}>
+            <Parallax image={require("assets/img/home/home.jpg")}>
                 <div className={classes.container}>
                     <GridContainer>
                         <GridItem>
@@ -53,8 +58,18 @@ export default function Components(props) {
                 </div>
             </Parallax>
 
+            <div className={classes.container}>
+                <HeadSection  />
+            </div>
+            <div className={classes.container}>
+                <ProductSection  />
+            </div>
+            
+            <TeamSection />
 
-            <SectionLogin />
+            <div className={classes.container}>
+                <WorkSection />
+            </div>
             <Footer /> 
         </div>
     );

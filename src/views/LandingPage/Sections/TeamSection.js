@@ -20,7 +20,7 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/team
 import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
 
 
-import image1 from "assets/img/menu/menu6.jpg";
+import image1 from "assets/img/menu/menu10_2.jpg";
 
 
 const useStyles = makeStyles(styles);
@@ -37,11 +37,11 @@ export default function TeamSection() {
   return (
     <div className={classes.section}>
         <Card>
-          <img className={classess.imgCard} src={image1} alt="Card-img" />
+          <img className={classess.imgCard1} src={image1} alt="Card-img" />
           <div className={classess.imgCardOverlay}>
             <h4 className={classes.cardTitle}>Thông Tin Đặt Bàn</h4>
             <p className={classes.smallTitle}>Khám phá những sự kiện đặc sắc tại Nhà hàng.</p>
-            <h4 style={{color:"#fff"}}>Lưu ý: Đặt bàn qua fanpage hoặc qua hotline của nhà hàng để được hưởng nhiều ưu đãi nhất.</h4>
+            <h4 style={{color:"#fff", fontWeight:"400"}}>Lưu ý: Đặt bàn qua fanpage hoặc qua hotline của nhà hàng để được hưởng nhiều ưu đãi nhất.</h4>
             <Button style={{backgroundColor:"#112"}} type="button">ĐẶT BÀN NGAY</Button>
           </div>
         </Card>

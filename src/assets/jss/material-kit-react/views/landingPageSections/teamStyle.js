@@ -22,11 +22,14 @@ const teamStyle = {
     fontSize:"2.2rem",
     color: "#fff",
     fontWeight:"400",
-    fontFamily:""
+    lineHeight:"1.33333",
+    fontFamily: "Playfair Display"
   },
   smallTitle: {
-    fontSize:"15px",
-    color: "#fff"
+    fontSize:"18px",
+    color: "#fff",
+    fontWeight:"bold",
+    fontFamily: "Roboto"
   },
   description: {
     color: "#999"

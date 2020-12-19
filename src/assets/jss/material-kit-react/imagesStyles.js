@@ -38,7 +38,7 @@ const imagesStyles = {
   },
   imgCardOverlay: {
     position: "absolute",
-    top: "100px",
+    top: "150px",
     right: "0",
     bottom: "0",
     left: "0",
