@@ -6,7 +6,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
 import { cardTitle } from "assets/jss/material-kit-react.js";
 import { Link } from "react-router-dom";
-import DateFnsUtils from '@date-io/date-fns';
 import {
   KeyboardTimePicker,
   KeyboardDatePicker,
@@ -90,9 +89,9 @@ export default function TeamSection() {
           <form className={classes.root} noValidate autoComplete="off">
             <div style={{ margin: "15px" }}>
               <TextField
-                id="date"
+                id="datetime-local"
                 label="Date"
-                type="date"
+                type="datetime-local"
                 style={{width:"204px"}}
                 variant="outlined"
                 InputLabelProps={{
@@ -153,7 +152,7 @@ export default function TeamSection() {
               <TextField
                 id="outlined-textarea"
                 label="Name"
-                placeholder="Name"
+            
                 multiline
                 variant="outlined"
               />

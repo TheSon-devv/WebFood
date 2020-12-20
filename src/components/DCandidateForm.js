@@ -98,9 +98,11 @@ const DCandidateForm = ({ classes, ...props }) => {
                             variant="contained"
                             color="default"
                             className={classes.smMargin}
+                            type="date"
                         >
                             Reset
                         </Button>
+                        <input type="date"></input>
                     </div>
                 </Grid>
             </Grid>
