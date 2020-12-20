@@ -6,6 +6,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
 import { cardTitle } from "assets/jss/material-kit-react.js";
 import { Link } from "react-router-dom";
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 // @material-ui/icons
 
@@ -27,6 +38,16 @@ const useStyles = makeStyles(styles);
 const useImageStyles=makeStyles(imagesStyles);
 
 export default function TeamSection() {
+  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   const classes = useStyles();
   const classess= useImageStyles();
   const imageClasses = classNames(
@@ -35,10 +56,10 @@ export default function TeamSection() {
     classes.imgFluid
   );
   return (
-    <div className={classes.section} >
+    <div className={classes.section}>
       <GridContainer spacing="3">
         <GridItem xs="2"></GridItem>
-        <GridItem xs="8" >
+        <GridItem xs="8">
           <div style={{ textAlign: "center" }}>
             <h2
               style={{
@@ -67,14 +88,18 @@ export default function TeamSection() {
           </div>
 
           <form className={classes.root} noValidate autoComplete="off">
-            <div style={{margin:"15px"}}>
+            <div style={{ margin: "15px" }}>
               <TextField
-                id="outlined-textarea"
+                id="date"
                 label="Date"
-                placeholder="Date"
-                multiline
+                type="date"
+                style={{width:"204px"}}
                 variant="outlined"
+                InputLabelProps={{
+                  shrink: true,
+                }}
               />
+
               <select
                 className={classes.input}
                 id="select"
@@ -92,15 +117,23 @@ export default function TeamSection() {
                 <option>More than 7 pax</option>
               </select>
             </div>
-            
-            <div style={{margin:"15px"}}>
+
+            <div style={{ margin: "15px" }}>
               <TextField
-                id="outlined-textarea"
-                label="Hours"
-                placeholder="Hours"
-                multiline
+                id="time"
+                label="Time"
+                type="time"
+                defaultValue="07:30"
+                style={{width:"204px"}}
                 variant="outlined"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                inputProps={{
+                  step: 300, // 5 min
+                }}
               />
+
               <select
                 className={classes.input}
                 tabindex="-1"
@@ -116,7 +149,7 @@ export default function TeamSection() {
               </select>
             </div>
 
-            <div >
+            <div>
               <TextField
                 id="outlined-textarea"
                 label="Name"
@@ -125,7 +158,7 @@ export default function TeamSection() {
                 variant="outlined"
               />
               <TextField
-                style={{marginLeft:"15px"}}
+                style={{ marginLeft: "15px" }}
                 id="outlined-textarea"
                 label="Address"
                 placeholder="Address"
@@ -134,9 +167,8 @@ export default function TeamSection() {
               />
             </div>
 
-            <div style={{marginTop:"15px"}}>
+            <div style={{ marginTop: "15px" }}>
               <TextField
-                
                 id="outlined-textarea"
                 label="Email"
                 placeholder="Email"
@@ -144,7 +176,7 @@ export default function TeamSection() {
                 variant="outlined"
               />
               <TextField
-                style={{marginLeft:"15px"}}
+                style={{ marginLeft: "15px" }}
                 id="outlined-textarea"
                 label="Phone Number"
                 placeholder="Phone Number"
@@ -153,7 +185,7 @@ export default function TeamSection() {
               />
             </div>
 
-            <div style={{marginTop:"15px"}}>
+            <div style={{ marginTop: "15px" }}>
               <TextField
                 id="outlined-multiline-static"
                 label="Message"

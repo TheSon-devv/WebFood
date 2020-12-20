@@ -21,7 +21,7 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/team
 import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
 
 
-import image1 from "assets/img/menu/menu10_2.jpg";
+import image1 from "assets/img/menu/menu16_2.jpg";
 
 
 const useStyles = makeStyles(styles);

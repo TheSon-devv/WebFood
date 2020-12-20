@@ -73,7 +73,8 @@ const teamStyle = {
     minHeight:"200px",
     width:"53%", 
     fontSize:"14px"
-  }
+  },
+  
 };
 
 export default teamStyle;
