@@ -30,7 +30,7 @@ export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
-    <div>
+    <div style={{ backgroundColor: "#fff" }}>
       <Header
         color="transparent"
         routes={dashboardRoutes}
@@ -38,8 +38,8 @@ export default function LandingPage(props) {
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
-          height: 400,
-          color: "white"
+          height: 500,
+          color: "#fff"
         }}
         {...rest}
       />

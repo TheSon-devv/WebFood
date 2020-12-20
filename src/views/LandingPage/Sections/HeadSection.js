@@ -21,7 +21,7 @@ import Carousel from "react-slick";
 import styles from "assets/jss/material-kit-react/views/landingPageSections/headStyle.js";
 import { cardTitle } from "assets/jss/material-kit-react.js";
 
-import image1 from "assets/img/home/home1.jpg";
+import image1 from "assets/img/home/home3.jpg";
 import icon1 from "assets/img/icons/meat1.png";
 import icon2 from "assets/img/icons/fish1.png";
 import icon3 from "assets/img/icons/menu1.png";

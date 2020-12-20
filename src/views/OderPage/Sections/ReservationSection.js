@@ -153,7 +153,6 @@ export default function TeamSection() {
               <TextField
                 id="outlined-textarea"
                 label="Name"
-                placeholder="Name"
                 multiline
                 variant="outlined"
               />
@@ -161,7 +160,6 @@ export default function TeamSection() {
                 style={{ marginLeft: "15px" }}
                 id="outlined-textarea"
                 label="Address"
-                placeholder="Address"
                 multiline
                 variant="outlined"
               />
@@ -171,7 +169,6 @@ export default function TeamSection() {
               <TextField
                 id="outlined-textarea"
                 label="Email"
-                placeholder="Email"
                 multiline
                 variant="outlined"
               />
@@ -179,7 +176,6 @@ export default function TeamSection() {
                 style={{ marginLeft: "15px" }}
                 id="outlined-textarea"
                 label="Phone Number"
-                placeholder="Phone Number"
                 multiline
                 variant="outlined"
               />
