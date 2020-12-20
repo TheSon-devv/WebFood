@@ -86,7 +86,7 @@ export default function HeaderLinks(props) {
           target="_blank"
           className={classes.navLink}
         >
-            <Link to="/" className={classes.link}>Contact</Link>
+            <Link to="/contact-page" className={classes.link}>Contact</Link>
            
         </Button>
       </ListItem>

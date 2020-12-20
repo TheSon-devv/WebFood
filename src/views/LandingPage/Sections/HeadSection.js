@@ -57,7 +57,7 @@ export default function ProductSection() {
                 <Button
                     className={classes.button}
                 >
-                    <Link to="/" className={classes.link}>LEARN MORE</Link> 
+                    <Link to="/profile-page" className={classes.link}>LEARN MORE</Link> 
                 </Button>
           </GridItem>
 
