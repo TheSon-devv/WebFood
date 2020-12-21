@@ -1,6 +1,5 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
 // @material-ui/core components
@@ -15,11 +14,9 @@ import Button from "components/CustomButtons/Button.js";
 import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import SectionCarousel from "./Sections/SectionCarousel.js";
+
 
 import styles from "assets/jss/material-kit-react/views/components.js";
-import SectionLogin from "./Sections/SectionLogin.js";
-import LandingPage from "views/LandingPage/LandingPage.js";
 import ProductSection from "views/LandingPage/Sections/ProductSection.js";
 import WorkSection from "views/LandingPage/Sections/WorkSection.js";
 import TeamSection from "views/LandingPage/Sections/TeamSection.js";
@@ -39,7 +36,7 @@ export default function Components(props) {
           fixed
           changeColorOnScroll={{
             height: 500,
-            color:"#fff",
+            
             
           }}
           {...rest}

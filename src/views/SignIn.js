@@ -13,8 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
 
-import { connect } from "react-redux";
-import {userLoginFetch} from "../actions/api";
+
 
 
 function Copyright() {
@@ -65,7 +64,7 @@ const SignIn = () => {
     const classes = useStyles();
     const [email, setEmail] = useState('');
     const [password,setPassword] = useState('');
-    const [login,setLogin] = useState(false);
+    //const [login,setLogin] = useState(false);
 
     const handleChangeEmail = e => {
         setEmail(e.target.value);

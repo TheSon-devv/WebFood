@@ -1,32 +1,27 @@
 import React from "react";
 // @material-ui/core components
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import Carousel from "react-slick";
 import Slider from "react-slick";
 
 import image1 from "assets/img/menu/menu3.jpg";
-import image2 from "assets/img/menu/menu1.jpg";
 import image3 from "assets/img/menu/menu2.jpg";
 import image4 from "assets/img/menu/menu4.jpg";
 import image5 from "assets/img/menu/menu5.jpg";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
-import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
+
 
 
 
 const useStyles = makeStyles(styles);
-const useImageStyles=makeStyles(imagesStyles);
+
 
 export default function WorkSection() {
   const settings = {
@@ -38,12 +33,11 @@ export default function WorkSection() {
     autoplay: true,
   };
   const classes = useStyles();
-  const classess= useImageStyles();
   return (
     <div className={classes.section}>
-      <GridContainer spacing="3">
-        <GridItem xs="3"></GridItem>
-        <GridItem xs="6">
+      <GridContainer spacing={3}>
+        <GridItem xs={3}></GridItem>
+        <GridItem xs={6}>
           <div style={{textAlign:"center"}}>
             <span style={{ fontSize:"18px",fontFamily:"Roboto", fontWeight:"700",color:"#1c1c1c"}}>DISCOVER OTHER SERVICES</span>
             <h2 style={{textAlign:"center", fontSize:"45px",fontFamily:"Playfair Display", fontWeight:"400",color:"#1c1c1c"}}>Themed Events</h2>
@@ -55,12 +49,12 @@ export default function WorkSection() {
           </div>
         </GridItem>
 
-        <GridItem xs="3"></GridItem>
+        <GridItem xs={3}></GridItem>
       </GridContainer>
 
-      <GridContainer spacing="3" >
-        <GridItem xs="1"></GridItem>
-        <GridItem xs="10" >
+      <GridContainer spacing={3} >
+        <GridItem xs={1}></GridItem>
+        <GridItem xs={10} >
           <Card>
             <Slider {...settings}>
               <div>
@@ -101,7 +95,7 @@ export default function WorkSection() {
             </Slider>
           </Card>
           </GridItem>
-          <GridItem xs="1"></GridItem>
+          <GridItem xs={1}></GridItem>
       </GridContainer>
       
     </div>

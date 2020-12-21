@@ -1,6 +1,6 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
@@ -16,7 +16,6 @@ import Button from "components/CustomButtons/Button.js";
 
 
 import styles from "assets/jss/material-kit-react/views/oderPageSections/reservationStyle.js";
-import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
 
 
 import phone from "assets/img/contact/phone1.png"
@@ -25,26 +24,11 @@ import address from "assets/img/contact/address.png"
 
 
 const useStyles = makeStyles(styles);
-const useImageStyles=makeStyles(imagesStyles);
 
 export default function TeamSection() {
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  
   const classes = useStyles();
-  const classess= useImageStyles();
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
+
   return (
     <div style={{padding:"70px 0 50px 0"}}>
       <GridContainer spacing="2">
@@ -68,7 +52,7 @@ export default function TeamSection() {
                   fontWeight: "700",
                 }}
               >
-                <img src={address}></img> ADDRESS
+                <img src={address} alt="Card-img-cap"></img> ADDRESS
               </span>
 
               <p
@@ -90,7 +74,7 @@ export default function TeamSection() {
                   fontWeight: "700",
                 }}
               >
-                <img src={phone}></img> PHONE
+                <img src={phone} alt="Card-img-cap"></img> PHONE
               </span>
 
               <p
@@ -113,7 +97,7 @@ export default function TeamSection() {
                   fontWeight: "700",
                 }}
               >
-                <img src={email}></img> MAIL
+                <img src={email} alt="Card-img-cap"></img> MAIL
               </span>
 
               <p

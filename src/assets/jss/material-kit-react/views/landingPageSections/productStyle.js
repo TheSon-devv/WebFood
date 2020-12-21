@@ -1,16 +1,10 @@
 import { title } from "assets/jss/material-kit-react.js";
-
-
-
 const productStyle = {
-  title:{
-    fontSize:"15px",
-    fontWeight:"20"
-  },
   description: {
     fontSize: "4.2rem",
     fontWeight: "50",
-    position: "relative"
+    position: "relative",
+    color: "#999"
   },
   section: {
     padding: "30px 0 10px 0",
@@ -22,9 +16,6 @@ const productStyle = {
     marginTop: "30px",
     minHeight: "32px",
     textDecoration: "none"
-  },
-  description: {
-    color: "#999"
   },
   
 };

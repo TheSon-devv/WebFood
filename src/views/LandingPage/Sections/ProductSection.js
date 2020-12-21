@@ -3,21 +3,14 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
-import LocationOn from "@material-ui/icons/LocationOn";
+
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
 import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from 'components/CustomButtons/Button.js';
-import Carousel from "react-slick";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
@@ -26,7 +19,6 @@ import { cardTitle } from "assets/jss/material-kit-react.js";
 import image1 from "assets/img/menu/menu3.jpg";
 import image2 from "assets/img/menu/menu1.jpg";
 import image3 from "assets/img/menu/menu2.jpg";
-import image4 from "assets/img/menu/menu4.jpg";
 import image5 from "assets/img/menu/menu5.jpg";
 
 const useStyles = makeStyles(styles);
@@ -34,14 +26,6 @@ const usecardTitle = makeStyles(cardTitle);
 const useImageStyle= makeStyles(imagesStyles);
 
 export default function ProductSection() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-  };
   const classes = useStyles();
   const classess = usecardTitle();
   const classesss= useImageStyle();

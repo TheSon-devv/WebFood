@@ -4,19 +4,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 
 // @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
-import LocationOn from "@material-ui/icons/LocationOn";
+
 
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
 import Button from 'components/CustomButtons/Button.js';
-import Carousel from "react-slick";
+
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/headStyle.js";
 import { cardTitle } from "assets/jss/material-kit-react.js";
@@ -31,14 +25,7 @@ const useStyles = makeStyles(styles);
 const usecardTitle = makeStyles(cardTitle);
 
 export default function ProductSection() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-  };
+
   const classes = useStyles();
   const classess = usecardTitle();
   return (
@@ -69,33 +56,33 @@ export default function ProductSection() {
           </GridItem>
         </GridContainer>
 
-        <GridContainer spacing="3">
-            <GridItem xs="4">
+        <GridContainer spacing={3}>
+            <GridItem xs={4}>
                 <div>
-                    <img src={icon1}></img>
+                    <img src={icon1} alt="Card-img-cap"></img>
                     <h4 className={classess.cardTitle}>Vietnamese Culinary Artisanship</h4>
                     <p>We create menu that highlights traditional Vietnamese cuisine and showcases national heritage, enticing the senses of fine dining enthusiasts.</p>
                 </div>
             </GridItem>
-            <GridItem xs="4">
+            <GridItem xs={4}>
                 <div>
-                    <img src={icon2}></img>
+                    <img src={icon2} alt="Card-img-cap"></img>
                     <h4 className={classess.cardTitle}>Premium Ingredients</h4>
                     <p>We are proud to offer fresh food from daily deliveries to ensure that only the finest ingredients are used to create our premium dishes.</p>
                 </div>
             </GridItem>
-            <GridItem xs="4">
+            <GridItem xs={4}>
                 <div>
-                    <img src={icon3}></img>
+                    <img src={icon3} alt="Card-img-cap"></img>
                     <h4 className={classess.cardTitle}>Classy Design</h4>
                     <p>Luxurious and timeless, our design is greatly inspired by neoclassicism that manifests utmost elegance and sophistication from the mid-18th century.</p>
                 </div>
             </GridItem>
         </GridContainer>
 
-        <GridContainer spacing="3" style={{marginTop:"40px"}}>
-            <GridItem xs="3"></GridItem>
-            <GridItem xs="6">
+        <GridContainer spacing={3} style={{marginTop:"40px"}}>
+            <GridItem xs={3}></GridItem>
+            <GridItem xs={6}>
             <div style={{textAlign:"center"}}>
                 <span style={{ fontSize:"18px",fontFamily:"Roboto", fontWeight:"700",color:"#1c1c1c"}}>ENJOY</span>
                 <h2 style={{textAlign:"center", fontSize:"45px",fontFamily:"Playfair Display", fontWeight:"400",color:"#1c1c1c"}}>OUR MENUS</h2>
@@ -106,7 +93,7 @@ export default function ProductSection() {
             </div>
             </GridItem>
 
-            <GridItem xs="3"></GridItem>
+            <GridItem xs={3}></GridItem>
       </GridContainer>
       </div>
   );

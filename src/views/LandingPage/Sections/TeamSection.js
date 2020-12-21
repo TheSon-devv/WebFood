@@ -1,21 +1,18 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import { cardTitle } from "assets/jss/material-kit-react.js";
+
 import { Link } from "react-router-dom";
 
 // @material-ui/icons
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
-import Parallax from "components/Parallax/Parallax.js";
+
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
@@ -30,11 +27,7 @@ const useImageStyles=makeStyles(imagesStyles);
 export default function TeamSection() {
   const classes = useStyles();
   const classess= useImageStyles();
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
+  
   return (
     <div className={classes.section}>
         <Card>

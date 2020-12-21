@@ -1,22 +1,11 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
-import { cardTitle } from "assets/jss/material-kit-react.js";
 import { Link } from "react-router-dom";
-import DateFnsUtils from '@date-io/date-fns';
-import {
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+
 
 // @material-ui/icons
 
@@ -24,37 +13,20 @@ import Select from '@material-ui/core/Select';
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
-import Parallax from "components/Parallax/Parallax.js";
+
 
 import styles from "assets/jss/material-kit-react/views/oderPageSections/reservationStyle.js";
-import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
-import { Input } from "@material-ui/core";
+
+
 
 
 const useStyles = makeStyles(styles);
-const useImageStyles=makeStyles(imagesStyles);
+
 
 export default function TeamSection() {
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+ 
   const classes = useStyles();
-  const classess= useImageStyles();
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
+  
   return (
     <div className={classes.section}>
       <GridContainer spacing="3">
