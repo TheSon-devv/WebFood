@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -23,20 +23,20 @@ import Select from '@material-ui/core/Select';
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
-import Parallax from "components/Parallax/Parallax.js";
+
 
 import styles from "assets/jss/material-kit-react/views/oderPageSections/reservationStyle.js";
 import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
-import { Input } from "@material-ui/core";
 
+
+//redux
+import * as actions from "../../../actions/monAn";
+import { connect } from "react-redux";
 
 const useStyles = makeStyles(styles);
-const useImageStyles=makeStyles(imagesStyles);
+const useImageStyles = makeStyles(imagesStyles);
 
-export default function TeamSection() {
+const  TeamSection = ({...props}) => {
   const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
 
   const handleDateChange = (date) => {
@@ -48,15 +48,19 @@ export default function TeamSection() {
     setAge(event.target.value);
   };
   const classes = useStyles();
-  const classess= useImageStyles();
+  const classess = useImageStyles();
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
     classes.imgFluid
   );
+
+  useEffect(() => {
+    props.fetchAllMonAn()
+  },[])
   return (
     <div className={classes.section}>
-      <GridContainer spacing="3">
+      <GridContainer spacing={3}>
         <GridItem xs="2"></GridItem>
         <GridItem xs="8">
           <div style={{ textAlign: "center" }}>
@@ -92,7 +96,7 @@ export default function TeamSection() {
                 id="datetime-local"
                 label="Date"
                 type="datetime-local"
-                style={{width:"204px"}}
+                style={{ width: "204px" }}
                 variant="outlined"
                 InputLabelProps={{
                   shrink: true,
@@ -123,7 +127,7 @@ export default function TeamSection() {
                 label="Time"
                 type="time"
                 defaultValue="07:30"
-                style={{width:"204px"}}
+                style={{ width: "204px" }}
                 variant="outlined"
                 InputLabelProps={{
                   shrink: true,
@@ -152,7 +156,6 @@ export default function TeamSection() {
               <TextField
                 id="outlined-textarea"
                 label="Name"
-            
                 multiline
                 variant="outlined"
               />
@@ -160,7 +163,6 @@ export default function TeamSection() {
                 style={{ marginLeft: "15px" }}
                 id="outlined-textarea"
                 label="Address"
-                placeholder="Address"
                 multiline
                 variant="outlined"
               />
@@ -170,7 +172,6 @@ export default function TeamSection() {
               <TextField
                 id="outlined-textarea"
                 label="Email"
-                placeholder="Email"
                 multiline
                 variant="outlined"
               />
@@ -178,7 +179,6 @@ export default function TeamSection() {
                 style={{ marginLeft: "15px" }}
                 id="outlined-textarea"
                 label="Phone Number"
-                placeholder="Phone Number"
                 multiline
                 variant="outlined"
               />
@@ -209,3 +209,13 @@ export default function TeamSection() {
     </div>
   );
 }
+
+const mapStateToProps = state => ({
+  monAnList : state.monAn.listMonAn
+})
+
+const mapActionToProps = {
+  fetchAllMonAn : actions.fetchAllMonAn
+}
+
+export default connect(mapStateToProps,mapActionToProps)(TeamSection);

@@ -14,7 +14,6 @@ import Container from '@material-ui/core/Container';
 import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { userPostFetch } from "../actions/api";
 
 function Copyright() {
   return (
@@ -169,8 +168,5 @@ const SignUp = ({...props}) =>  {
   );
 }
 
-const mapDispatchToProps = dispatch => ({
-    userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
-})
 
-export default connect(null,mapDispatchToProps)(SignUp);
+export default SignUp;
