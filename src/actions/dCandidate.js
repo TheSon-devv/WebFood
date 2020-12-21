@@ -6,7 +6,7 @@ export const ACTION_TYPE = {
     DELETE: 'DELETE',
     FETCH_ALL: 'FETCH_ALL'
 }
-
+    
 const formateData = data => ({
     ...data
 })

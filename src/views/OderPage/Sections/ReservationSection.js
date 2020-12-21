@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // nodejs library that concatenates classes
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
 import { Link } from "react-router-dom";
-
 
 // @material-ui/icons
 
@@ -17,19 +16,24 @@ import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/oderPageSections/reservationStyle.js";
 
-
+//redux
+import * as actions from "../../../actions/monAn";
+import { connect } from "react-redux";
 
 
 const useStyles = makeStyles(styles);
 
 
-export default function TeamSection() {
- 
+const  ReservationSection = ({...props}) => {
+  
   const classes = useStyles();
   
+  useEffect(() => {
+    props.fetchAllMonAn()
+  },[])
   return (
     <div className={classes.section}>
-      <GridContainer spacing="3">
+      <GridContainer spacing={3}>
         <GridItem xs="2"></GridItem>
         <GridItem xs="8">
           <div style={{ textAlign: "center" }}>
@@ -62,10 +66,10 @@ export default function TeamSection() {
           <form className={classes.root} noValidate autoComplete="off">
             <div style={{ margin: "15px" }}>
               <TextField
-                id="date"
+                id="datetime-local"
                 label="Date"
-                type="date"
-                style={{width:"204px"}}
+                type="datetime-local"
+                style={{ width: "204px" }}
                 variant="outlined"
                 InputLabelProps={{
                   shrink: true,
@@ -96,7 +100,7 @@ export default function TeamSection() {
                 label="Time"
                 type="time"
                 defaultValue="07:30"
-                style={{width:"204px"}}
+                style={{ width: "204px" }}
                 variant="outlined"
                 InputLabelProps={{
                   shrink: true,
@@ -178,3 +182,13 @@ export default function TeamSection() {
     </div>
   );
 }
+
+const mapStateToProps = state => ({
+  monAnList : state.monAn.listMonAn
+})
+
+const mapActionToProps = {
+  fetchAllMonAn : actions.fetchAllMonAn
+}
+
+export default connect(mapStateToProps,mapActionToProps)(ReservationSection);

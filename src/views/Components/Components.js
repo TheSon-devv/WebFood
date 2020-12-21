@@ -35,9 +35,7 @@ export default function Components(props) {
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
-            height: 500,
-            
-            
+            height: 500, 
           }}
           {...rest}
         />

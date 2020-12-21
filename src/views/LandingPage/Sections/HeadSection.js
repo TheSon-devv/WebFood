@@ -24,7 +24,7 @@ import icon3 from "assets/img/icons/menu1.png";
 const useStyles = makeStyles(styles);
 const usecardTitle = makeStyles(cardTitle);
 
-export default function ProductSection() {
+export default function HeadSection() {
 
   const classes = useStyles();
   const classess = usecardTitle();
