@@ -20,12 +20,12 @@ const dCandidate = (state = initialState, action) => {
         case ACTION_TYPE.UPDATE:
             return {
                 ...state,
-                list: state.list.map(x => x.id === action.payload.id ? action.payload : x)
+                list: state.list.map(x => x.maBan === action.payload.maBan ? action.payload : x)
             }
         case ACTION_TYPE.DELETE:
             return {
                 ...state,
-                list: state.list.filter(x => x.id !== action.payload)
+                list: state.list.filter(x => x.maBan !== action.payload)
             }
         default:
             return state;

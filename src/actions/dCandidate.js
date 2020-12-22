@@ -34,27 +34,27 @@ export const create = (data) => dispatch => {
                 payload: res.data
             });
         })
-            .catch(err => console.log(err))
+        .catch(err => console.log(err))
 }
 
-export const update = (id,data) => dispatch => {
+export const update = (maBan,data) => dispatch => {
     data = formateData(data)
-    dCandidate().update(id,data)
+    dCandidate().update(maBan,data)
         .then(res => {
             dispatch({
                 type : ACTION_TYPE.UPDATE,
-                payload: {id,...data}
+                payload: {maBan,...data}
             })
         })
         .catch(err => console.log(err))
 }
 
-export const Delete = (id,data) => dispatch => {
-    dCandidate().delete(id)
+export const Delete = (maBan,data) => dispatch => {
+    dCandidate().delete(maBan)
         .then(res => {
             dispatch({
                 type : ACTION_TYPE.DELETE,
-                payload: id
+                payload: maBan
             })
         })
         .catch(err => console.log(err))

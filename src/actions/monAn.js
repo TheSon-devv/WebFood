@@ -1,9 +1,9 @@
 import { monAn } from "./api";
 
 export const ACTION_TYPE_MON_AN = {
-    CREATE_MON_AN: 'CREATE',
-    UPDATE_MON_AN: 'UPDATE',
-    DELETE_MON_AN: 'DELETE',
+    CREATE_MON_AN: 'CREATE_MON_AN',
+    UPDATE_MON_AN: 'UPDATE_MON_AN',
+    DELETE_MON_AN: 'DELETE_MON_AN',
     FETCH_ALL_MON_AN: 'FETCH_ALL_MON_AN'
 }
 
@@ -25,9 +25,9 @@ export const fetchAllMonAn = () => dispatch => {
         .catch(err => console.log(err))
 }
 
-export const create = (data) => dispatch => {
+export const createMonAn = (data) => dispatch => {
     data = formatData(data)
-    monAn().create(data)
+    monAn().createMonAn(data)
         .then(
             res => {
                 dispatch({
@@ -39,9 +39,9 @@ export const create = (data) => dispatch => {
         .catch(err => console.log(err))
 }
 
-export const update = (id,data) => dispatch => {
+export const updateMonAn = (id,data) => dispatch => {
     data = formatData(data)
-    monAn().update(id,data)
+    monAn().updateMonAn(id,data)
         .then(
             res => {
                 dispatch({
@@ -53,8 +53,8 @@ export const update = (id,data) => dispatch => {
         .catch(err => console.log(err))
 }
 
-export const Delete = (id) => dispatch => {
-    monAn().delete(id)
+export const DeleteMonAn = (id) => dispatch => {
+    monAn().deleteMonAn(id)
         .then(
             res => {
                 dispatch({

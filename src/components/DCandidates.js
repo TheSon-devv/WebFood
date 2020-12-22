@@ -27,7 +27,7 @@ const DCandidates = ({ classes, ...props }) => {
 
     const onDelete = id => {
         if(window.confirm('Are you sure to delete record?')){
-            props.deleteDcandidate(id,()=>{window.alert('Delete succesful')})
+            props.deleteDcandidate(id,window.alert("Đã xóa"))
         }
     }
     return (
@@ -43,24 +43,28 @@ const DCandidates = ({ classes, ...props }) => {
                             <Table>
                                 <TableHead className={classes.root}>
                                     <TableRow>
-                                        <TableCell>Email</TableCell>
-                                        <TableCell>Password</TableCell>
+                                        <TableCell>Ma Ban</TableCell>
+                                        <TableCell>So luong ban</TableCell>
+                                        <TableCell>So luong nguoi</TableCell>
+                                        <TableCell>MaKH</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
                                     {
                                         props.dCandidateList.map((record, index) => {
                                             return (
-                                                <TableRow key={record.id} hover>
-                                                    <TableCell>{record.email}</TableCell>
-                                                    <TableCell>{record.password}</TableCell>
+                                                <TableRow key={record.maBan} hover>
+                                                    <TableCell>{record.maBan}</TableCell>
+                                                    <TableCell>{record.soLuongBan}</TableCell>
+                                                    <TableCell>{record.soLuongNguoi}</TableCell>
+                                                    <TableCell>{record.maKH}</TableCell>
                                                     <TableCell>
                                                         <ButtonGroup variant="text">
-                                                            <Button onClick={()=>{setCurrentId(record.id)}}>
+                                                            <Button onClick={()=>{setCurrentId(record.maBan)}}>
                                                                 <EditIcon color="primary" />
                                                             </Button>
                                                             <Button>
-                                                                <DeleteIcon color="secondary" onClick={()=>onDelete(record.id)}/>
+                                                                <DeleteIcon color="secondary" onClick={()=>onDelete(record.maBan)}/>
                                                             </Button>
                                                         </ButtonGroup>
                                                     </TableCell>

@@ -18,7 +18,6 @@ const useForm = (initialValues,validate) => {
         setValues,
         errors,
         setErrors,
-        
         handleInputChange
     };
 }
