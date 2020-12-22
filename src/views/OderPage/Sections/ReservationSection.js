@@ -95,7 +95,7 @@ const  ReservationSection = ({...props}) => {
             </div>
 
             <div style={{ margin: "15px" }}>
-              <TextField
+              {/* <TextField
                 id="time"
                 label="Time"
                 type="time"
@@ -108,8 +108,14 @@ const  ReservationSection = ({...props}) => {
                 inputProps={{
                   step: 300, // 5 min
                 }}
+              /> */}
+              <TextField
+               
+                id="outlined-textarea"
+                label="Name"
+                multiline
+                variant="outlined"
               />
-
               <select
                 className={classes.input}
                 tabindex="-1"
@@ -123,20 +129,17 @@ const  ReservationSection = ({...props}) => {
                 <option>5 tables</option>
                 <option>More than 5 tables</option>
               </select>
+              
             </div>
 
             <div>
+              
               <TextField
-                id="outlined-textarea"
-                label="Name"
-                multiline
-                variant="outlined"
-              />
-              <TextField
-                style={{ marginLeft: "15px" }}
+                
                 id="outlined-textarea"
                 label="Address"
                 multiline
+                fullWidth
                 variant="outlined"
               />
             </div>

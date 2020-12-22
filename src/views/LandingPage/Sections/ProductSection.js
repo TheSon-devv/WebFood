@@ -49,6 +49,7 @@ export default function ProductSection() {
               <Button
                 style={{ backgroundColor: "#112", width: "40%" }}
                 type="button"
+                href="https://www.therhythmsrestaurant.com/files/upload/Wine_list.pdf"
               >
                 SEE MENU
               </Button>
@@ -73,6 +74,7 @@ export default function ProductSection() {
               <Button
                 style={{ backgroundColor: "#112", width: "40%" }}
                 type="button"
+                href="https://www.therhythmsrestaurant.com/files/upload/Menu_A_la_carte.pdf"
               >
                 SEE MENU
               </Button>
@@ -96,6 +98,7 @@ export default function ProductSection() {
               <Button
                 style={{ backgroundColor: "#112", width: "40%" }}
                 type="button"
+                href="https://www.therhythmsrestaurant.com/files/upload/The-Soul-of-Asia.pdf"
               >
                 SEE MENU
               </Button>
@@ -119,6 +122,7 @@ export default function ProductSection() {
               <Button
                 style={{ backgroundColor: "#112", width: "40%" }}
                 type="button"
+                href="https://www.therhythmsrestaurant.com/files/upload/Lovely-Dovey.pdf"
               >
                 SEE MENU
               </Button>
