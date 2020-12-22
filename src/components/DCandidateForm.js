@@ -1,4 +1,4 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import useForm from "./useForm";
 import { Grid, TextField, withStyles, Button } from "@material-ui/core";
 import { connect } from "react-redux";
@@ -21,24 +21,33 @@ const styles = theme => ({
 })
 
 const initialValues = {
-    email: '',
-    password: ''
+    maBan : '',
+    soLuongBan: '',
+    soLuongNguoi: '',
+    maKH: ''
 }
 
 const DCandidateForm = ({ classes, ...props }) => {
 
     const validate = (fieldValues = values) => {
         let temp = {}
-        if ('email' in fieldValues)
-            temp.email = (/^$|.+@.+..+/).test(fieldValues.email) ? "" : "Email is not valid"
-        if ('password' in fieldValues)
-            temp.password = fieldValues.password ? "" : "This field is requied"
-        
+        // if ('email' in fieldValues)
+        //     temp.email = (/^$|.+@.+..+/).test(fieldValues.email) ? "" : "Email is not valid"
+
+        if ('maBan' in fieldValues)
+            temp.maBan = fieldValues.maBan ? "" : "This field is requied"
+        if ('soLuongBan' in fieldValues)
+            temp.soLuongBan = fieldValues.soLuongBan ? "" : "This field is requied"
+        if ('soLuongNguoi' in fieldValues)
+            temp.soLuongNguoi = fieldValues.soLuongNguoi ? "" : "This field is requied"
+        if ('maKH' in fieldValues)
+            temp.maKH = fieldValues.maKH ? "" : "This field is requied"
+
         setErrors({
             ...temp
         })
-        if (fieldValues == values)
-            return Object.values(temp).every(x => x == "")
+        if (fieldValues === values)
+            return Object.values(temp).every(x => x === "")
     }
 
     const {
@@ -48,18 +57,18 @@ const DCandidateForm = ({ classes, ...props }) => {
     const handleSubmit = e => {
         e.preventDefault()
         if (validate()) {
-            if (props.currentId == 0)
-                props.createDCandidate(values, () => { window.alert('Da them') })
+            if (props.currentId === 0)
+                props.createDCandidate(values, window.alert('Đã thêm'))
             else
-                props.updateDCandidate(props.currentId, values, () => { window.alert('updated') })
+                props.updateDCandidate(props.currentId,values,window.alert('updated'))
         }
         console.log(values)
     }
 
     useEffect(() => {
-        if (props.currentId != 0)
+        if (props.currentId !== 0)
             setValues({
-                ...props.dCandidateList.find(x => x.id == props.currentId)
+                ...props.dCandidateList.find(x => x.maBan === props.currentId)
             })
     }, [props.currentId])
     return (
@@ -67,24 +76,43 @@ const DCandidateForm = ({ classes, ...props }) => {
             <Grid container>
                 <Grid item xs={6}>
                     <TextField
-                        name="email"
+                        name="maBan"
                         variant="outlined"
-                        label="Email"
+                        label="maBan"
                         type="text"
-                        value={values.email}
+                        value={values.maBan}
                         onChange={handleInputChange}
-                        {...(errors.email && { error: true, helperText: errors.email })}
+                        {...(errors.maBan && { error: true, helperText: errors.maBan })}
                     />
                     <TextField
-                        name="password"
+                        name="soLuongBan"
                         variant="outlined"
-                        label="Password"
-                        type="password"
-                        value={values.password}
+                        label="soLuongBan"
+                        type="text"
+                        value={values.soLuongBan}
                         onChange={handleInputChange}
-                        {...(errors.password && { error: true, helperText: errors.password })}
+                        {...(errors.soLuongBan && { error: true, helperText: errors.soLuongBan })}
                     />
-                
+                    <TextField
+                        name="soLuongNguoi"
+                        variant="outlined"
+                        label="soLuongNguoi"
+                        type="text"
+                        value={values.soLuongNguoi}
+                        onChange={handleInputChange}
+                        {...(errors.soLuongNguoi && { error: true, helperText: errors.soLuongNguoi })}
+                    />
+
+                    <TextField
+                        name="maKH"
+                        variant="outlined"
+                        label="maKH"
+                        type="text"
+                        value={values.maKH}
+                        onChange={handleInputChange}
+                        {...(errors.maKH && { error: true, helperText: errors.maKH })}
+                    />
+
                     <div>
                         <Button
                             variant="contained"
@@ -98,11 +126,11 @@ const DCandidateForm = ({ classes, ...props }) => {
                             variant="contained"
                             color="default"
                             className={classes.smMargin}
-                            type="date"
+                            type="submit"
                         >
                             Reset
                         </Button>
-                        <input type="date"></input>
+
                     </div>
                 </Grid>
             </Grid>

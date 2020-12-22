@@ -114,6 +114,7 @@ const  ReservationSection = ({...props}) => {
                 className={classes.input}
                 tabindex="-1"
                 aria-hidden="true"
+                
               >
                 <option>Type of table</option>
                 <option>1 table</option>
@@ -188,7 +189,8 @@ const mapStateToProps = state => ({
 })
 
 const mapActionToProps = {
-  fetchAllMonAn : actions.fetchAllMonAn
+  fetchAllMonAn : actions.fetchAllMonAn,
+  createMonAn : actions.createMonAn
 }
 
 export default connect(mapStateToProps,mapActionToProps)(ReservationSection);
