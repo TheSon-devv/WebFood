@@ -13,7 +13,7 @@ import Slider from "react-slick";
 import image1 from "assets/img/slider/slider6.jpg";
 import image2 from "assets/img/slider/slider5.jpg";
 import image3 from "assets/img/slider/slider7.jpg";
-import image4 from "assets/img/slider/slider8.jpg";
+import image4 from "assets/img/slider/slider3.jpg";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 

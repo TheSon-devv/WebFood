@@ -139,8 +139,8 @@ const  ReservationSection = ({...props}) => {
                 
                 id="outlined-textarea"
                 label="Address"
-                multiline
-                fullWidth
+                style={{width:"424px"}}
+                
                 variant="outlined"
               />
             </div>
