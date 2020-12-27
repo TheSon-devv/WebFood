@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import dCandidate  from "./dCandidate";
 import monAn from "./monAn";
+import datBan from "./datBan";
 
 export const reducers = combineReducers({
-    dCandidate,
+    datBan,
     monAn
 })

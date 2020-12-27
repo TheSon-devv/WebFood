@@ -3,15 +3,14 @@ import axios from "axios";
 const Url= 'http://localhost:52419/api/';
 
 
-export const dCandidate = (url = Url + 'DatBan/') => {
+export const datBan = (url = Url + 'DatBan/') => {
     return {
-        fetchAll: () => axios.get(url),
-        fetchById: maBan => axios.get(url + maBan),
-        create: newBan => axios.post(url, newBan),
-        update: (maBan, updateBan) => axios.put(url + maBan, updateBan),
-        delete: maBan => axios.delete(url + maBan)
+        fetchAllDatBan: () => axios.get(url),
+        fetchByIdDatBan: maBan => axios.get(url + maBan),
+        createDatBan: newMaBan => axios.post(url, newMaBan)
     }
 }
+
 
 export const monAn = (url = Url + 'MonAn/') => {
     return {

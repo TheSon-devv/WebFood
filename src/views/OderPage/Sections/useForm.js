@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const useForm = (initialValues,validate) => {
+const useForm = (initialValues,validate,setCurrentId) => {
     const [values,setValues] = useState(initialValues);
     const [errors, setErrors] = useState({});
 
@@ -12,13 +12,21 @@ const useForm = (initialValues,validate) => {
             ...filedValue
         })
         validate(filedValue)
+    }   
+    const resetForm = () => {
+        setValues({
+            ...initialValues
+        })
+        setErrors({})
+        setCurrentId(0)
     }
     return{
         values,
         setValues,
         errors,
         setErrors,
-        handleInputChange
+        handleInputChange,
+        resetForm
     };
 }
 export default useForm;

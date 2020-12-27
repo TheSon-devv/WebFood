@@ -12,7 +12,6 @@ import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
 import SignIn from "./views/SignIn";
 import SignUp from "./views/SignUp";
-import DCandidates from "./components/DCandidates";
 import ReservationPage from "views/OderPage/ReservationPage.js";
 import ContactPage from "views/ContactPage/ContactPage.js";
 
@@ -27,7 +26,6 @@ ReactDOM.render(
     <Router history={hist}>
       <Switch>
         <Route path="/" exact component={Components} />
-        <Route path="/DCandidates" component={DCandidates} />
         <Route path="/landing-page" component={LandingPage} />
         <Route path="/profile-page" component={ProfilePage} />
         <Route path="/login-page" component={LoginPage} />
