@@ -10,10 +10,10 @@ import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
 import Slider from "react-slick";
 
-import image1 from "assets/img/slider/slider6.jpg";
-import image2 from "assets/img/slider/slider5.jpg";
-import image3 from "assets/img/slider/slider7.jpg";
-import image4 from "assets/img/slider/slider3.jpg";
+import image1 from "assets/img/slider/slider2.jpg";
+import image2 from "assets/img/slider/slider3.jpg";
+import image3 from "assets/img/slider/slider1.jpg";
+import image4 from "assets/img/slider/slider4.jpg";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 
