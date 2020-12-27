@@ -42,11 +42,11 @@ const ReservationSection = ({ ...props }) => {
     const validate = (fieldValues = values) => {
         let temp = {...errors}
         if ('timeCheck' in fieldValues)
-            temp.timeCheck = fieldValues.timeCheck ? "" : "This field is requied"
+            temp.timeCheck = fieldValues.timeCheck ? "" : "Vui lòng nhập thời gian đặt bàn"
         if ("soLuongBan" in fieldValues)
-            temp.soLuongBan = fieldValues.soLuongBan ? "" : "This field is requied";
+            temp.soLuongBan = fieldValues.soLuongBan ? "" : "Vui lòng nhập số lượng bàn";
         if ("soLuongNguoi" in fieldValues)
-            temp.soLuongNguoi = fieldValues.soLuongNguoi ? "" : "This field is requied";
+            temp.soLuongNguoi = fieldValues.soLuongNguoi ? "" : "Vui lòng nhập số lượng người";
         if ("maKH" in fieldValues)
             temp.maKH = fieldValues.maKH ? "" : "This field is requied";
         setErrors({
@@ -61,9 +61,10 @@ const ReservationSection = ({ ...props }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (validate() == true) {
+        if (validate()) {
             if (props.currentId === 0) {
-                props.createDatBan(values, () => { window.alert("Them thanh cong ") })
+                props.createDatBan(values);
+                window.alert("Đặt bàn thành công ! Vui lòng đợi điện thoại từ nhà hàng để chốt bàn")
             }
             resetForm();
         }
