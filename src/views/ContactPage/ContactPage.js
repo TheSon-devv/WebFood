@@ -16,8 +16,7 @@ import Parallax from "components/Parallax/Parallax.js";
 import styles from "assets/jss/material-kit-react/views/contactPage/contactPage.js";
 
 // Sections for this page
-import ContactSection from "views/ContactPage/Sections/ContactSection.js"
-
+import ContactSection from "views/ContactPage/Sections/ContactSection.js";
 
 const dashboardRoutes = [];
 
@@ -52,7 +51,7 @@ export default function LandingPage(props) {
                   color: "#fff",
                 }}
               >
-                Contact
+                Liên Hệ
               </h1>
               <h2 className={classes.text}>~</h2>
               <h4
@@ -64,8 +63,8 @@ export default function LandingPage(props) {
                   display: "block",
                 }}
               >
-                Want to find out more about what we do? Feel free to contact us
-                through the information below.
+                Bạn muốn tìm hiểu thêm về những gì chúng tôi làm? Hãy liên hệ
+                với chúng tôi qua thông tin bên dưới.
               </h4>
               <br />
             </GridItem>

@@ -182,7 +182,7 @@ const ReservationSection = ({ ...props }) => {
               name="ghiChu"
               value={values.ghiChu}
               type="text"
-              label="Message"
+              label="Nội Dung"
               onChange={handleInputChange}
               multiline
               rows={5}
@@ -193,7 +193,7 @@ const ReservationSection = ({ ...props }) => {
           <div>
             <Button className={classes.button} type="submit">
               {/* <Link to="/" className={classes.link}> */}
-              COMPLETE RESERVATION
+              GỬI THÔNG TIN
               {/* </Link> */}
             </Button>
           </div>

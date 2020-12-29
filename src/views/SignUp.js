@@ -1,26 +1,25 @@
-import React ,{useState} from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import React, { useState } from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
-
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      
+      {"Copyright © "}
+
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -28,16 +27,16 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3),
   },
   submit: {
@@ -45,30 +44,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignUp = ({...props}) =>  {
+const SignUp = ({ ...props }) => {
   const classes = useStyles();
 
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const [firstName,setFirstName] = useState('');
-    const [lastName,setLastName] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
-    const handleChangeEmail = e => {
-        setEmail(e.target.value);
-    }
-    const handleChangePassword = e => {
-        setPassword(e.target.value);
-    }
-    const handleChangeFirstName = e => {
-        setFirstName(e.target.value);
-    }
-    const handleChangeLastName = e => {
-        setLastName(e.target.value);
-    }
-    const handleSubmit = e => {
-        e.preventDefault();
-        props.userPostFetch()
-    }
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleChangeFirstName = (e) => {
+    setFirstName(e.target.value);
+  };
+  const handleChangeLastName = (e) => {
+    setLastName(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.userPostFetch();
+  };
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -165,7 +164,6 @@ const SignUp = ({...props}) =>  {
       </Box>
     </Container>
   );
-}
-
+};
 
 export default SignUp;

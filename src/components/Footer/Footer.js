@@ -12,7 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Favorite from "@material-ui/icons/Favorite";
 
 import styles from "assets/jss/material-kit-react/components/footerStyle.js";
-
+import footer from "assets/img/footer.png";
 const useStyles = makeStyles(styles);
 
 export default function Footer(props) {
@@ -20,24 +20,36 @@ export default function Footer(props) {
   const { whiteFont } = props;
   const footerClasses = classNames({
     [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
   const aClasses = classNames({
     [classes.a]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
   return (
     <footer className={footerClasses}>
-      <div className={classes.container}>
-        <div className={classes.left}>
+      <div>
+        <img
+          src={footer}
+          alt="Card-img"
+          style={{ position: "relative", zIndex: "5" }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
+            marginTop: "100px",
+            zIndex: "10",
+          }}
+        >
+          <h2 style={{ color: "#fff" }}>Restaurant</h2>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/?ref=mkr-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                Creative Tim
+              <a className={classes.block} target="_blank">
+                TRANG CHỦ
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -46,7 +58,7 @@ export default function Footer(props) {
                 className={classes.block}
                 target="_blank"
               >
-                About us
+                THỰC ĐƠN
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -55,7 +67,7 @@ export default function Footer(props) {
                 className={classes.block}
                 target="_blank"
               >
-                Blog
+                GIỚI THIỆU
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -64,22 +76,14 @@ export default function Footer(props) {
                 className={classes.block}
                 target="_blank"
               >
-                Licenses
+                LIÊN HỆ
               </a>
             </ListItem>
           </List>
-        </div>
-        <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=mkr-footer"
-            className={aClasses}
-            target="_blank"
-          >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+          <h4 style={{ color: "#fff", marginTop: "50px" }}>
+            2020 Managed by La Sinfonía Vietnam. © All rights reserved. Terms of
+            Use and Privacy Policy.
+          </h4>
         </div>
       </div>
     </footer>
@@ -87,5 +91,5 @@ export default function Footer(props) {
 }
 
 Footer.propTypes = {
-  whiteFont: PropTypes.bool
+  whiteFont: PropTypes.bool,
 };
