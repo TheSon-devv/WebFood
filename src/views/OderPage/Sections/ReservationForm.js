@@ -37,15 +37,15 @@ const ReservationSection = ({ ...props }) => {
         if ("timeCheck" in fieldValues)
             temp.timeCheck = fieldValues.timeCheck
                 ? ""
-                : "Vui lòng nhập thời gian đặt bàn";
+                : "Vui lòng chọn thời gian";
         if ("soLuongBan" in fieldValues)
             temp.soLuongBan = fieldValues.soLuongBan
                 ? ""
-                : "Vui lòng nhập số lượng bàn";
+                : "Nhập tối thiểu 1 bàn";
         if ("soLuongNguoi" in fieldValues)
             temp.soLuongNguoi = fieldValues.soLuongNguoi
                 ? ""
-                : "Vui lòng nhập số lượng người";
+                : "Nhập tối thiểu 1 người";
         if ("tenKhachHang" in fieldValues)
             temp.tenKhachHang = fieldValues.tenKhachHang ? "" : "Vui lòng nhập tên";
         if ("phoneKhachHang" in fieldValues)
