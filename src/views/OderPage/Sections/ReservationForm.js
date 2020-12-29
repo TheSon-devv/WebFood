@@ -22,11 +22,11 @@ const useStyles = makeStyles(styles);
 
 const initialValues = {
   timeCheck: "",
-  soLuongBan: "",
-  soLuongNguoi: "",
+  soLuongBan: 0,
+  soLuongNguoi: 0,
   ghiChu: "",
-  tenKH: "",
-  phoneKH: "",
+  tenKhachHang: "",
+  phoneKhachHang: "",
 };
 
 const ReservationSection = ({ ...props }) => {
@@ -46,10 +46,12 @@ const ReservationSection = ({ ...props }) => {
       temp.soLuongNguoi = fieldValues.soLuongNguoi
         ? ""
         : "Vui lòng nhập số lượng người";
-    if ("tenKH" in fieldValues)
-      temp.tenKH = fieldValues.tenKH ? "" : "Vui lòng nhập tên";
-    if ("phoneKH" in fieldValues)
-      temp.phoneKH = fieldValues.phoneKH ? "" : "Vui lòng nhập số điện thoại";
+    if ("tenKhachHang" in fieldValues)
+      temp.tenKhachHang = fieldValues.tenKhachHang ? "" : "Vui lòng nhập tên";
+    if ("phoneKhachHang" in fieldValues)
+      temp.phoneKhachHang = fieldValues.phoneKhachHang
+        ? ""
+        : "Vui lòng nhập số điện thoại";
     setErrors({
       ...temp,
     });
@@ -68,14 +70,22 @@ const ReservationSection = ({ ...props }) => {
     e.preventDefault();
     if (validate()) {
       if (props.currentId === 0) {
-        props.createDatBan(values);
-        window.alert(
-          "Đặt bàn thành công ! Vui lòng đợi điện thoại từ nhà hàng để chốt bàn"
-        );
+        if (
+          window.confirm(
+            "Xác nhận đặt " +
+              values.soLuongBan +
+              " bàn vào " +
+              values.timeCheck +
+              " ?"
+          )
+        ) {
+          props.createDatBan(values);
+          window.alert("Đặt bàn thành công !");
+          resetForm();
+        }
       }
-      resetForm();
     }
-    console.log(values);
+    console.log(values.soLuongBan + " " + values.soLuongNguoi);
   };
 
   useEffect(() => {
@@ -108,12 +118,14 @@ const ReservationSection = ({ ...props }) => {
         <option>7 pax</option>
         <option>More than 7 pax</option>
     </select> */}
+
             <TextField
               name="soLuongBan"
               label="Số lượng bàn *"
-              type="text"
+              type="number"
               value={values.soLuongBan}
               onChange={handleInputChange}
+              id="outlined-number"
               variant="outlined"
               {...(errors.soLuongBan && {
                 error: true,
@@ -124,9 +136,10 @@ const ReservationSection = ({ ...props }) => {
               style={{ marginLeft: "10px" }}
               name="soLuongNguoi"
               label="Số lượng người *"
-              type="text"
+              type="number"
               value={values.soLuongNguoi}
               onChange={handleInputChange}
+              id="outlined-number"
               variant="outlined"
               {...(errors.soLuongNguoi && {
                 error: true,
@@ -137,6 +150,7 @@ const ReservationSection = ({ ...props }) => {
 
           <div style={{ marginTop: "15px" }}>
             <TextField
+              id="outlined-required"
               name="timeCheck"
               type="datetime-local"
               value={values.timeCheck}
@@ -152,37 +166,41 @@ const ReservationSection = ({ ...props }) => {
 
           <div style={{ marginTop: "15px" }}>
             <TextField
-              name="tenKh"
+              id="outlined-required"
+              name="tenKhachHang"
               label="Tên Khách Hàng *"
               type="text"
-              value={values.TenKH}
+              value={values.tenKhachHang}
               variant="outlined"
               onChange={handleInputChange}
-              {...(errors.tenKH && {
+              {...(errors.tenKhachHang && {
                 error: true,
-                helperText: errors.tenKH,
+                helperText: errors.tenKhachHang,
               })}
             />
             <TextField
+              id="outlined-required"
               style={{ marginLeft: "10px" }}
-              name="phone"
+              name="phoneKhachHang"
               label="Số Điện Thoại *"
               type="text"
-              value={values.phoneKH}
+              value={values.phoneKhachHang}
+              onChange={handleInputChange}
               variant="outlined"
-              {...(errors.phoneKH && {
+              {...(errors.phoneKhachHang && {
                 error: true,
-                helperText: errors.phoneKH,
+                helperText: errors.phoneKhachHang,
               })}
             />
           </div>
 
           <div style={{ marginTop: "15px" }}>
             <TextField
+              id="outlined-required"
               name="ghiChu"
               value={values.ghiChu}
               type="text"
-              label="Nội Dung"
+              label="Message"
               onChange={handleInputChange}
               multiline
               rows={5}
@@ -193,7 +211,7 @@ const ReservationSection = ({ ...props }) => {
           <div>
             <Button className={classes.button} type="submit">
               {/* <Link to="/" className={classes.link}> */}
-              GỬI THÔNG TIN
+              Đặt bàn
               {/* </Link> */}
             </Button>
           </div>
@@ -201,6 +219,16 @@ const ReservationSection = ({ ...props }) => {
       </Grid>
     </div>
   );
+
+  {
+    /* <input type="number" name="soLuongBan"
+                            min="1" value={values.soLuongBan} onChange={handleInputChange}>
+                        </input>
+
+                        <input type="number" name="soLuongNguoi"
+                            value={values.soLuongNguoi} onChange={handleInputChange} >
+                        </input> */
+  }
 };
 
 const mapStateToProps = (state) => ({
