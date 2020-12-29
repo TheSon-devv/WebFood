@@ -51,54 +51,31 @@ export default function HeaderLinks(props) {
         
       </ListItem> */}
       <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-            <Link to="/" className={classes.link} >Home</Link>
-           
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          <Link to="/" className={classes.link}>
+            Trang Chủ
+          </Link>
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-            <Link to="/landing-page" className={classes.link}>Menu</Link>
-           
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          <Link to="/landing-page" className={classes.link}>
+            Thực Đơn
+          </Link>
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-            <Link to="/profile-page" className={classes.link}>About Us</Link>
-           
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          <Link to="/profile-page" className={classes.link}>
+            Giới Thiệu
+          </Link>
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-            <Link to="/contact-page" className={classes.link}>Contact</Link>
-           
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <img></img>
-        <Button
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-            <Link to="/signIn" className={classes.link}>Login</Link>
-           
+        <Button color="transparent" target="_blank" className={classes.navLink}>
+          <Link to="/contact-page" className={classes.link}>
+            Liên Hệ
+          </Link>
         </Button>
       </ListItem>
     </List>

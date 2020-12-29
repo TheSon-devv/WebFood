@@ -42,7 +42,7 @@ const ReservationSection = ({ ...props }) => {
                 color: "#1c1c1c",
               }}
             >
-              BOOK A TABLE
+              ĐẶT BÀN
             </h2>
             <h2 style={{ color: "#112", textAlign: "center" }}>~</h2>
             <h4
@@ -53,8 +53,8 @@ const ReservationSection = ({ ...props }) => {
                 color: "#666666",
               }}
             >
-              Please choose your reservation date with specific time and number
-              of people to book a table
+              Vui lòng gửi các thông tin đặt bàn trước để chúng tôi phục vụ bạn
+              tốt hơn
             </h4>
             <br />
           </div>

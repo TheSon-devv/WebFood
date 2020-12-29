@@ -15,7 +15,6 @@ import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
 
-
 import styles from "assets/jss/material-kit-react/views/components.js";
 import ProductSection from "views/LandingPage/Sections/ProductSection.js";
 import WorkSection from "views/LandingPage/Sections/WorkSection.js";
@@ -25,53 +24,72 @@ import HeadSection from "views/LandingPage/Sections/HeadSection.js";
 const useStyles = makeStyles(styles);
 
 export default function Components(props) {
-    const classes = useStyles();
-    const { ...rest } = props;
-    return (
-      <div style={{ backgroundColor: "#fff" }}>
-        <Header
-          color="transparent"
-          brand="Restaurant"
-          rightLinks={<HeaderLinks />}
-          fixed
-          changeColorOnScroll={{
-            height: 500, 
-          }}
-          {...rest}
-        />
-        <Parallax image={require("assets/img/home/home2.jpg")}>
-          <div className={classes.container}>
-            <GridContainer>
-              <GridItem>
-                <div className={classes.brand}>
-                    <div>
-                        <span style={{ fontSize:"18px",fontFamily:"Roboto", fontWeight:"700",color:"#fff"}}>- Spcecial Offer -</span>
-                        <h2 style={{textAlign:"center", fontSize:"45px",fontFamily:"Playfair Display", fontWeight:"400",color:"#fff"}}>Winter Special Offers At The Rhythms</h2>
-                    </div>
-                  <Button className={classes.button}>
-                    <Link to="/reservation-page" className={classes.link}>
-                      ĐẶT BÀN NGAY
-                    </Link>
-                  </Button>
+  const classes = useStyles();
+  const { ...rest } = props;
+  return (
+    <div style={{ backgroundColor: "#fff" }}>
+      <Header
+        color="transparent"
+        brand="Restaurant"
+        rightLinks={<HeaderLinks />}
+        fixed
+        changeColorOnScroll={{
+          height: 500,
+        }}
+        {...rest}
+      />
+      <Parallax image={require("assets/img/home/home2.jpg")}>
+        <div className={classes.container}>
+          <GridContainer>
+            <GridItem>
+              <div className={classes.brand}>
+                <div>
+                  <span
+                    style={{
+                      fontSize: "18px",
+                      fontFamily: "Roboto",
+                      fontWeight: "700",
+                      color: "#fff",
+                    }}
+                  >
+                    - Siêu Ưu Đãi -
+                  </span>
+                  <h2
+                    style={{
+                      textAlign: "center",
+                      fontSize: "30px",
+                      fontFamily: "Playfair Display",
+                      fontWeight: "400",
+                      color: "#fff",
+                    }}
+                  >
+                    MIDNIGHT MEMORIES - ĐÊM COUNTDOWN CHÀO ĐÓN NĂM MỚI 2021
+                  </h2>
                 </div>
-              </GridItem>
-            </GridContainer>
-          </div>
-        </Parallax>
-
-        <div className={classes.container}>
-          <HeadSection />
+                <Button className={classes.button}>
+                  <Link to="/reservation-page" className={classes.link}>
+                    ĐẶT BÀN NGAY
+                  </Link>
+                </Button>
+              </div>
+            </GridItem>
+          </GridContainer>
         </div>
-        <div className={classes.container}>
-          <ProductSection />
-        </div>
+      </Parallax>
 
-        <TeamSection />
-
-        <div className={classes.container}>
-          <WorkSection />
-        </div>
-        <Footer />
+      <div className={classes.container}>
+        <HeadSection />
       </div>
-    );
+      <div className={classes.container}>
+        <ProductSection />
+      </div>
+
+      <TeamSection />
+
+      <div className={classes.container}>
+        <WorkSection />
+      </div>
+      <Footer />
+    </div>
+  );
 }
