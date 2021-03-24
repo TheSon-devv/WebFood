@@ -12,6 +12,7 @@ import { Grid } from "@material-ui/core";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/oderPageSections/reservationStyle.js";
+import classes from "./test.module.css";
 
 //redux
 import * as actions from "../../../actions/datBan";
@@ -22,60 +23,14 @@ const useStyles = makeStyles(styles);
 
 const initialValues = {
   timeCheck: "",
-  soLuongBan: 0,
-  soLuongNguoi: 0,
+  soLuongBan: "",
+  soLuongNguoi: "",
   ghiChu: "",
   tenKhachHang: "",
   phoneKhachHang: "",
 };
 
 const ReservationSection = ({ ...props }) => {
-<<<<<<< HEAD
-    const classes = useStyles();
-
-    const validate = (fieldValues = values) => {
-        let temp = { ...errors };
-        if ("timeCheck" in fieldValues)
-            temp.timeCheck = fieldValues.timeCheck
-                ? ""
-                : "Vui lòng chọn thời gian";
-        if ("soLuongBan" in fieldValues)
-            temp.soLuongBan = fieldValues.soLuongBan
-                ? ""
-                : "Nhập tối thiểu 1 bàn";
-        if ("soLuongNguoi" in fieldValues)
-            temp.soLuongNguoi = fieldValues.soLuongNguoi
-                ? ""
-                : "Nhập tối thiểu 1 người";
-        if ("tenKhachHang" in fieldValues)
-            temp.tenKhachHang = fieldValues.tenKhachHang ? "" : "Vui lòng nhập tên";
-        if ("phoneKhachHang" in fieldValues)
-            temp.phoneKhachHang = fieldValues.phoneKhachHang ? "" : "Vui lòng nhập số điện thoại";
-        setErrors({
-            ...temp,
-        });
-        if (fieldValues == values) return Object.values(temp).every((x) => x == "");
-    };
-    const {
-        values,
-        setValues,
-        handleInputChange,
-        errors,
-        setErrors,
-        resetForm,
-    } = useForm(initialValues, validate, props.setCurrentId);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (validate()) {
-            if (props.currentId === 0) {
-                if (window.confirm("Xác nhận đặt " + values.soLuongBan + " bàn vào " + values.timeCheck + " ?")) {
-                    props.createDatBan(values);
-                    window.alert("Đặt bàn thành công !");
-                    resetForm();
-                }
-            }
-=======
   const classes = useStyles();
 
   const validate = (fieldValues = values) => {
@@ -94,10 +49,12 @@ const ReservationSection = ({ ...props }) => {
         : "Vui lòng nhập số lượng người";
     if ("tenKhachHang" in fieldValues)
       temp.tenKhachHang = fieldValues.tenKhachHang ? "" : "Vui lòng nhập tên";
-    if ("phoneKhachHang" in fieldValues)
+    if ("phoneKhachHang" in fieldValues) {
       temp.phoneKhachHang = fieldValues.phoneKhachHang
         ? ""
-        : "Vui lòng nhập số điện thoại";
+        : "Vui lòng nhập đúng số điện thoại";
+    }
+
     setErrors({
       ...temp,
     });
@@ -119,20 +76,23 @@ const ReservationSection = ({ ...props }) => {
         if (
           window.confirm(
             "Xác nhận đặt " +
-              values.soLuongBan +
-              " bàn vào " +
-              values.timeCheck +
-              " ?"
+            values.soLuongBan +
+            " bàn vào " +
+            values.timeCheck +
+            " ?"
           )
         ) {
-          props.createDatBan(values);
-          window.alert("Đặt bàn thành công !");
-          resetForm();
->>>>>>> 215f434d85925df3cff58a5314cbdcee265ed499
+          if (values.errors == null) {
+            props.createDatBan(values);
+            window.alert("Đặt bàn thành công ! Vui lòng đợi cuộc gọi xác nhận yêu cầu đặt bàn");
+            resetForm();
+          }
+          else{
+            window.alert("Có lỗi xảy ra !");
+          }
         }
       }
     }
-    console.log(values.soLuongBan + " " + values.soLuongNguoi);
   };
 
   useEffect(() => {
@@ -166,10 +126,11 @@ const ReservationSection = ({ ...props }) => {
         <option>More than 7 pax</option>
     </select> */}
 
-            <TextField
+            {/* <TextField
               name="soLuongBan"
               label="Số lượng bàn *"
               type="number"
+              min="10"
               value={values.soLuongBan}
               onChange={handleInputChange}
               id="outlined-number"
@@ -178,8 +139,29 @@ const ReservationSection = ({ ...props }) => {
                 error: true,
                 helperText: errors.soLuongBan,
               })}
+            /> */}
+            <input
+              name="soLuongBan"
+              label="Số lượng bàn *"
+              type="number"
+              min={1}
+              max={3}
+              value={values.soLuongBan}
+              onChange={handleInputChange}
+              style={{
+                margin: '5px 0',
+                marginRight: '10px',
+                width: '210px',
+                padding: 15,
+                fontSize: '1rem',
+              }}
+              placeholder="Số lượng bàn"
+              {...(errors.soLuongBan && {
+                error: true,
+                helperText: errors.soLuongBan,
+              })}
             />
-            <TextField
+            {/* <TextField
               style={{ marginLeft: "10px" }}
               name="soLuongNguoi"
               label="Số lượng người *"
@@ -192,6 +174,23 @@ const ReservationSection = ({ ...props }) => {
                 error: true,
                 helperText: errors.soLuongNguoi,
               })}
+            /> */}
+            <input
+              name="soLuongNguoi"
+              label="Số lượng người *"
+              type="number"
+              min={2}
+              max={5}
+              value={values.soLuongNguoi}
+              onChange={handleInputChange}
+              style={{
+                margin: '5px 0',
+                width: '210px',
+                padding: 15,
+                fontSize: '1rem',
+                // borderRadius:5
+              }}
+              placeholder="Số lượng người"
             />
           </div>
 
@@ -267,15 +266,6 @@ const ReservationSection = ({ ...props }) => {
     </div>
   );
 
-  {
-    /* <input type="number" name="soLuongBan"
-                            min="1" value={values.soLuongBan} onChange={handleInputChange}>
-                        </input>
-
-                        <input type="number" name="soLuongNguoi"
-                            value={values.soLuongNguoi} onChange={handleInputChange} >
-                        </input> */
-  }
 };
 
 const mapStateToProps = (state) => ({

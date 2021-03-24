@@ -73,11 +73,11 @@ export default function LandingPage(props) {
       </Parallax>
 
       <GridContainer
-        spacing="3"
+        spacing={3}
         style={{ marginTop: "50px", marginBottom: "100px" }}
       >
-        <GridItem xs="2"></GridItem>
-        <GridItem xs="8">
+        <GridItem xs={2}></GridItem>
+        <GridItem xs={8}>
           <h4
             style={{
               fontSize: "25px ",
@@ -92,7 +92,7 @@ export default function LandingPage(props) {
             Kiếm.
           </h4>
         </GridItem>
-        <GridItem xs="2"></GridItem>
+        <GridItem xs={2}></GridItem>
       </GridContainer>
 
       <div className={classes.container}>

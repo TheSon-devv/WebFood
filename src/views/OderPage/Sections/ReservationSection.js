@@ -52,9 +52,8 @@ const ReservationSection = ({ ...props }) => {
                 margin: "0 0 12px",
                 color: "#666666",
               }}
-            >
-              Vui lòng gửi các thông tin đặt bàn trước để chúng tôi phục vụ bạn
-              tốt hơn
+            > Lưu ý : 
+              Chỉ khi nhận được SMS hoặc cuộc gọi từ bộ phận chăm sóc khách hàng, yêu cầu đặt bàn của bạn mới được xác nhận!
             </h4>
             <br />
           </div>

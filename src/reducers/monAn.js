@@ -12,11 +12,11 @@ const monAn = (state = list, action) => {
                 listMonAn : [...action.payload]
             }
 
-        case ACTION_TYPE_MON_AN.CREATE_MON_AN : 
-            return {
-                ...state , 
-                listMonAn : [...state.listMonAn,...action.payload]
-            }
+        // case ACTION_TYPE_MON_AN.CREATE_MON_AN : 
+        //     return {
+        //         ...state , 
+        //         listMonAn : [...state.listMonAn,...action.payload]
+        //     }
         default : 
             return state ;
     }

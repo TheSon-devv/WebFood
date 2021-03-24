@@ -26,8 +26,8 @@ export default function TeamSection() {
 
   return (
     <div style={{ padding: "70px 0 50px 0" }}>
-      <GridContainer spacing="2">
-        <GridItem xs="6">
+      <GridContainer spacing={2}>
+        <GridItem xs={6}>
           <h1
             style={{
               textAlign: "center",
@@ -107,7 +107,7 @@ export default function TeamSection() {
             </p>
           </div>
         </GridItem>
-        <GridItem xs="5">
+        <GridItem xs={5}>
           <div style={{ textAlign: "center" }}>
             <h2
               style={{

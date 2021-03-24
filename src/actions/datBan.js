@@ -21,7 +21,6 @@ export const fetchAllDatBan = () => dispatch => {
                 })
             })
         .catch(err => console.log(err))
-
 }
 
 export const createDatBan = (data) => dispatch => {
